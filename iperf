@@ -1,0 +1,37 @@
+
+## Throughput - TCP
+
+Server
+    iperf -s
+
+Client
+    iperf -c 192.168.1.1
+    iperf -c 192.168.1.1 -t 10
+    iperf -P4 -c 192.168.1.1 -t 30 --bidir
+    iperf -c 192.168.1.1 -w 100M -t 120 -i 5 -4
+    iperf -c 192.168.1.1 -w 100M -t 120 -i 5 -4 -R
+
+
+Other Throughput
+    iperf -s -w 2m
+    iperf –c 192.168.1.1 -t 30s -i 1s
+    
+    
+## UDP
+
+Server
+    iperf -s -u -i 1 -p 521
+
+Client
+    iperf -u -c 192.168.1.1 -p 521 -b 1000m
+    
+## Option    
+-c <server ip> | Server IP address
+-u             | UDP (default is TCP)
+-t 120         | continue time (120 seconds)
+-i 5           | interval (5 seconds)
+-4             | IPv4
+-p 521         | port number 521
+-b             | -b, --bandwidth
+--bidir        | 雙向 bidirectional
+-R             | Download (default is upload)
