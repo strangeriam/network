@@ -5,8 +5,8 @@ Server
     iperf -s
 
 Client
-    iperf -c 192.168.1.1
-    iperf -c 192.168.1.1 -t 10
+    iperf -c 192.168.1.1 (default is 10 seconds)
+    iperf -c 192.168.1.1 -t 5
     iperf -P4 -c 192.168.1.1 -t 30 --bidir
     iperf -c 192.168.1.1 -w 100M -t 120 -i 5 -4
     iperf -c 192.168.1.1 -w 100M -t 120 -i 5 -4 -R
