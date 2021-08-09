@@ -34,5 +34,22 @@ Client
 -p 521         | port number 521
 -b             | -b, --bandwidth
 --bidir        | 雙向 bidirectional
--R             | Download (default is upload)
 
+## Client
+透過 -R 來讓 Server 傳向 client 即可
+-R             | Download (default is upload) 
+
+# 流量從 server 傳向 client 的方向：
+[root@client ~]# iperf3 -c 192.168.32.254 -t 10 -i 5 -R
+Connecting to host 192.168.32.254, port 5201
+Reverse mode, remote host 192.168.32.254 is sending
+[  4] local 192.168.32.1 port 46592 connected to 192.168.32.254 port 5201
+[ ID] Interval           Transfer     Bandwidth
+[  4]   0.00-5.00   sec   566 MBytes   949 Mbits/sec
+[  4]   5.00-10.00  sec   566 MBytes   949 Mbits/sec
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-10.00  sec  1.11 GBytes   952 Mbits/sec    0             sender
+[  4]   0.00-10.00  sec  1.11 GBytes   950 Mbits/sec                  receiver
+
+iperf Done.
