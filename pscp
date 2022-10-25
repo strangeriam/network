@@ -1,5 +1,9 @@
 
-A. Copy from Linux to Windows.
+A. Copy from Windows to Linux.
+# pscp -scp 222.tar.gz admin@192.168.2.1:/tmp/
+
+
+B. Copy from Linux to Windows.
 Copy single file
 # pscp user@host:remote_path/file_name host_path\file_name
 # pscp admin@192.168.2.1:/tmp/222.tar.gz 222.tar.gz
