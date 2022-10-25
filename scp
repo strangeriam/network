@@ -1,0 +1,3 @@
+## SSH copy windows file to linux
+
+scp file_source user@ip:file_destination
