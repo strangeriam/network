@@ -1,1 +1,24 @@
-sss
+
+A. Copy from Linux to Windows.
+Copy single file
+# pscp user@host:remote_path/file_name host_path\file_name
+# pscp admin@192.168.2.1:/tmp/222.tar.gz 222.tar.gz
+
+eg: pscp user1@192.168.1.10:/home/user2/a.txt c:\Desktop\a.txt
+Copy all files in a folder
+pscp user@host:remote_path/* host_path\ 
+
+eg: pscp user1@192.168.1.10:/home/user2/* c:\Desktop\test\ 
+Copy all files & folders in a folder
+pscp -r user@host:remote_path/ host_path\
+eg: pscp -r user1@192.168.1.10:/home/user2/ c:\Desktop\test\
+
+
+下載資料
+#pscp [options] user@host:source target
+#pscp [選項] 使用者名稱@host ip或名稱:要下載檔案的位置 本機存儲的位置
+pscp jeremy@8.8.8.8:/home/user/picture.jpg c:/document/picture.jpg
+上傳資料
+#pscp [options] target [user@]host:source
+#pscp 要上傳檔案的位置 [選項] 使用者名稱@host ip或名稱:遠端存儲的位置
+pscp C:/document/picture.jpg jeremy@8.8.8.8:/home/user/picture.jpg
