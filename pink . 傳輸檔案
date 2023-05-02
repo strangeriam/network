@@ -1,2 +1,4 @@
 # plink -ssh root@192.168.1.1 -pw openwifi < test.jpg "cat > ~/test.jpg"
 
+# plink -ssh root@192.168.2.1 -pw iamNCGTLMroot < k60cn1/setup_fw_env.sh "cat > tmp/setup_fw_env.sh"
+# plink -ssh root@192.168.2.1 -pw iamNCGTLMroot < k60cn1/kb_init.sh "cat > tmp/kb_init.sh"
