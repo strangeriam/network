@@ -1,0 +1,2 @@
+# plink -ssh root@192.168.1.1 -pw openwifi < test.jpg "cat > ~/test.jpg"
+
