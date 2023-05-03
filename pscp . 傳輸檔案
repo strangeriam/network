@@ -2,6 +2,7 @@
 ## Copy from Windows to Linux.
 ## Way 1
 pscp.exe -scp 222.tar.gz admin@192.168.2.1:/tmp/
+pscp.exe -scp setup_fw_env.sh root@192.168.2.1:/tmp/
 
 ## Way 2, 需要密碼檔 pwfile.txt, 將登入用的密碼放在 pwfile.txt
 pscp.exe -scp -pwfile pwfile.txt E001A63FB622.tar.gz admin@192.168.2.1:/tmp/E001A63FB622.tar.gz
