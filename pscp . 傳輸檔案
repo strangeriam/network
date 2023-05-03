@@ -1,13 +1,15 @@
 
-## A. Copy from Windows to Linux.
-# pscp -scp 222.tar.gz admin@192.168.2.1:/tmp/
-# pscp.exe -scp -pwfile pwfile.txt E001A63FB622.tar.gz admin@192.168.2.1:/tmp/E001A63FB622.tar.gz
+## Copy from Windows to Linux.
+## Way 1
+pscp.exe -scp 222.tar.gz admin@192.168.2.1:/tmp/
+
+## Way 2, 需要密碼檔 pwfile.txt, 將登入用的密碼放在 pwfile.txt
+pscp.exe -scp -pwfile pwfile.txt E001A63FB622.tar.gz admin@192.168.2.1:/tmp/E001A63FB622.tar.gz
 
 
-## B. Copy from Linux to Windows (不會有 Password 詢問).
-## 將登入用的密碼放在 pwfile.txt
-# pscp.exe -scp -pwfile pwfile.txt admin@192.168.2.1:/tmp/222.tar.gz .
+## Copy from Linux to Windows (不會有 Password 詢問).
+## Way 1, 將登入用的密碼放在 pwfile.txt
+pscp.exe -scp -pwfile pwfile.txt admin@192.168.2.1:/tmp/222.tar.gz .
 
-## C. Copy from Linux to Windows (不會有 Password 詢問).
-## 直接輸入儲存憑證 (echo y |)
-# echo y | pscp.exe -scp -pwfile pwfile.txt admin@192.168.2.1:/tmp/222.tar.gz .
+## Way 2, 直接輸入儲存憑證 (echo y |)
+echo y | pscp.exe -scp -pwfile pwfile.txt admin@192.168.2.1:/tmp/222.tar.gz .
