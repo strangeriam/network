@@ -1,7 +1,23 @@
 ## Config file
-# cat /etc/dhcp/dhcpd.conf
+ubuntu@ubuntu:~$ cat /etc/dhcp/dhcpd.conf
 
 ## Lease time
 ## 此設定為 IP租約時間 10 秒.
 default-lease-time 5;
 max-lease-time 10;
+
+
+## 查看 DHCP Server Status
+ubuntu@ubuntu:~$ sudo systemctl status isc-dhcp-server.service
+or
+ubuntu@ubuntu:~$ vi /var/log/syslog
+
+## DHCP Client List
+ubuntu@ubuntu:~$ dhcp-lease-list
+To get manufacturer names please download http://standards.ieee.org/regauth/oui/oui.txt to /usr/local/etc/oui.txt
+Reading leases from /var/lib/dhcp/dhcpd.leases
+MAC                IP              hostname       valid until         manufacturer        
+===============================================================================================
+20:d1:60:ff:37:c6  192.168.2.50    -NA-           2023-06-05 06:17:02 -NA-                
+72:88:6b:58:7e:7c  192.168.2.51    -NA-           2023-06-05 06:24:57 -NA-                
+ubuntu@ubuntu:~$ 
