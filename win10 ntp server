@@ -1,17 +1,24 @@
 Windows Server 設定
+
 修改登錄檔 (設定成NTP Server Type)
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\Type 更改為 “NTP”
+
 修改登錄檔 (設定授權NTP Server)
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\AnnounceFlags 更改為 “5”
+
 修改登錄檔 (啟動NTP Server)
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer\Enabled 更改為 “1”
+
 修改登錄檔 (指定查詢外部NTP Server)
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\NtpServer 更改為 “time.windows.com,0x1”
+
 修改登錄檔 (設定查詢外部NTP Server間隔)
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient\SpecialPollInterval 更改數值為 “900” (十進位) 即900秒查詢一次
+
 修改登錄檔 (設定時間修正)
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\MaxPosPhaseCorrection 更改數值為 “1800” (十進位)
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\MaxNegPhaseCorrection 更改數值為 “1800” (十進位)
+
 重啟 Windows Time Service
 1) 開啟cmd.exe
 2) 輸入 “net stop w32time” 後 enter (停止Service)
@@ -20,13 +27,16 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\MaxNegPhaseC
 Windows 10 設定
 修改登錄檔
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\Type 更改為 “NTP”
+
 修改登鈒檔
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\AnnounceFlags 更改為 “5”
+
 修改登鈒檔
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer\Enabled 更改為”1″
 以”administrator”身份開啟cmd
 1) 輸入 “sc config w32time start = auto” 後 enter (設定開機自動啟用w32time)
 2) 輸入 “w32tm /config /update” 後 enter (更新修改後的登錄碼)
+
 設定防火牆
 1) 防火牆->進階設定->輸入規則->新增規則
 2) 連接埠->UDP->123->允許連線->設定名稱->完成
