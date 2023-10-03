@@ -24,19 +24,3 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\MaxNegPhaseC
 2) 輸入 “net stop w32time” 後 enter (停止Service)
 3) 輸入 “net start w32time” 後 enter (啟用Service)
 
-Windows 10 設定
-修改登錄檔
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\Type 更改為 “NTP”
-
-修改登鈒檔
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\AnnounceFlags 更改為 “5”
-
-修改登鈒檔
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer\Enabled 更改為”1″
-以”administrator”身份開啟cmd
-1) 輸入 “sc config w32time start = auto” 後 enter (設定開機自動啟用w32time)
-2) 輸入 “w32tm /config /update” 後 enter (更新修改後的登錄碼)
-
-設定防火牆
-1) 防火牆->進階設定->輸入規則->新增規則
-2) 連接埠->UDP->123->允許連線->設定名稱->完成
