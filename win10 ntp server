@@ -1,5 +1,7 @@
 Windows Server 設定
 
+regedit
+
 修改登錄檔 (設定成NTP Server Type)
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\Type 更改為 “NTP”
 
