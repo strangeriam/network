@@ -1,2 +1,3 @@
 Server
     iperf -s
+    iperf -s -w 2m
