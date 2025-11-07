@@ -1,3 +1,8 @@
-Server
+TCP
     iperf -s
     iperf -s -w 2m
+
+
+UDP
+    iperf -s -u -i 1 -p 521
+
